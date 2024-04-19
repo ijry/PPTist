@@ -118,5 +118,15 @@ window.addEventListener('unload', () => {
   const newDiscardedDB = JSON.stringify(discardedDBList)
   localStorage.setItem(LOCALSTORAGE_KEY_DISCARDED_DB, newDiscardedDB)
 })
+
+// 设置数据
+const setCurrentData = function(data: any) {
+  slidesStore.setTitle(data.title)
+  slidesStore.setTheme(data.theme)
+  slidesStore.setSlides(data.slides)
+}
+defineExpose({
+  setCurrentData
+})
 </script>
 
