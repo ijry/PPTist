@@ -42,7 +42,8 @@ if (import.meta.env.MODE !== 'development') {
 }
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', modelValue: Object): void
+  (e: 'update:modelValue', modelValue: Object): void,
+  (e: 'ready'): void
 }>()
 
 watch(slides,(newValue)=>{ // 监测一个响应式值的变化
@@ -103,6 +104,7 @@ onMounted(async () => {
     slidesStore.setTheme(props.modelValue.theme)
     slidesStore.setSlides(props.modelValue.slides)
   }
+  emit('ready')
   await deleteDiscardedDB()
   snapshotStore.initSnapshotDatabase()
   mainStore.setAvailableFonts()
