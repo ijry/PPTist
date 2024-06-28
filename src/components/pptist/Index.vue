@@ -3,7 +3,7 @@
 @import 'prosemirror-view/style/prosemirror.css';
 @import 'animate.css';
 @import './styles/prosemirror.scss';
-@import './styles/global.scss';
+// @import './styles/global.scss';
 @import './styles/font.scss';
 </style>
 
